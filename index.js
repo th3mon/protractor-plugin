@@ -23,7 +23,7 @@ function loadAndWaitForAureliaPage(pageUrl) {
   browser.get(pageUrl);
   return browser.executeScript(
     'var cb = arguments[arguments.length - 1];' +
-    'if (window.webpackJsonp && document.querySelector("[aurelia-app]")) { cb("Aurelia composed") }' +
+    'if (document.querySelector("[aurelia-app]")) { cb("Aurelia composed") }' +
     'document.addEventListener("aurelia-composed", function (e) {' +
     '  cb("Aurelia App composed")' +
     '}, false);'
